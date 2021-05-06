@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="Cliente()">
+      <ion-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Adicionar</ion-title>
+    <!--<ion-title *ngIf="id<1">Adicionar usuário</ion-title>
+        <ion-title *ngIf="id>0">Editar usuário</ion-title>-->
+        
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome: </ion-label>
+      <ion-input [(ngModel)]='nome' type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email: </ion-label>
+      <ion-input [(ngModel)]='email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha: </ion-label>
+      <ion-input  [(ngModel)]='Senha' type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nível: </ion-label>
+      <ion-select [(ngModel)]='nome' placeholder="selecione...">
+        <ion-select-option value="admin">Administrador</ion-select-option>
+        <ion-select-option value="vendedor">Vendedor</ion-select-option>
+        <ion-select-option value="cliente">Cliente</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-button *ngIf="!id" color="success" expand="block" (click)="Cadastrar()">Cadastrar</ion-button>
+      <ion-button *ngIf="id" color="primary" expand="block" (click)="Cditar()">Editar</ion-button>
+      
+      <ion-button color="danger">Cancelar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
