@@ -29,15 +29,16 @@ nivel:string = "";
 
   }
   Cadastrar(){
-    return new Promise(resolv =>)
-    let dados = {
-      requisicao: 'add',
-      nome: this.nome,
-      usuarios: this.Cliente,
-      senha: this.senha,
-      nivel: this.nivel};
-
-
-  }
-  this.provider.s
+    return new Promise(resolv =>{
+      let dados = {
+        requisicao: 'add',
+        nome: this.nome,
+        clientes: this.Cliente,
+        senha: this.senha,
+        nivel: this.nivel
+      };
+      this.provider.dadosApi(dados,'api.php').subscribe(data=>{
+    this.route.navigate(['clientes'])
+  });
 }
+
