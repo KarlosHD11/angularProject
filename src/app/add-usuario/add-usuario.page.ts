@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { promises } from 'dns';
 import { Post } from 'src/services/post';
 
 @Component({
@@ -25,20 +24,20 @@ nivel:string = "";
     this.route.navigate(['cliente']);
   }
   Editar(){
-    
 
-  }
-  Cadastrar(){
-    return new Promise(resolv =>{
+   }
+  cadastrar(){
+    return new Promise(resolve =>{
       let dados = {
         requisicao: 'add',
         nome: this.nome,
-        clientes: this.Cliente,
+        usuario: this.Cliente,
         senha: this.senha,
         nivel: this.nivel
       };
       this.provider.dadosApi(dados,'api.php').subscribe(data=>{
-    this.route.navigate(['clientes'])
-  });
-}
-
+        console.log(data);
+        this.route.navigate(['usuarios'])
+      });
+    })
+  }}

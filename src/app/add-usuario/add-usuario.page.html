@@ -24,7 +24,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Senha: </ion-label>
-      <ion-input  [(ngModel)]='Senha' type="password"></ion-input>
+      <ion-input  [(ngModel)]='senha' type="password"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Nível: </ion-label>
@@ -36,7 +36,7 @@
     </ion-item>
     <ion-item lines="none">
       <ion-button *ngIf="!id" color="success" expand="block" (click)="Cadastrar()">Cadastrar</ion-button>
-      <ion-button *ngIf="id" color="primary" expand="block" (click)="Cditar()">Editar</ion-button>
+      <ion-button *ngIf="id" color="primary" expand="block" (click)="Editar()">Editar</ion-button>
       
       <ion-button color="danger">Cancelar</ion-button>
     </ion-item>
